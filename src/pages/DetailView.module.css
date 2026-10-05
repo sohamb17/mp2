@@ -1,0 +1,242 @@
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.back {
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.back:hover {
+  color: var(--accent);
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.position {
+  min-width: 4.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-muted);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(240px, 380px) 1fr;
+  align-items: start;
+  gap: 2rem;
+}
+
+.portrait {
+  position: sticky;
+  top: 5.5rem;
+  display: grid;
+  place-items: end center;
+  aspect-ratio: 3 / 4;
+  padding: 1.5rem 1.5rem 0;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(255, 138, 0, 0.45), transparent 60%),
+    linear-gradient(180deg, #1f2860, #0f1430);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.6));
+}
+
+.name {
+  margin: 0.5rem 0 1.25rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  color: var(--accent);
+  text-shadow: 0 4px 0 #7a2a00;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin: 0 0 1.75rem;
+}
+
+.stat {
+  padding: 0.75rem 1rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.stat dt {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.stat dd {
+  margin: 0.2rem 0 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.kiValue {
+  color: var(--gold);
+}
+
+.sectionTitle {
+  margin-bottom: 0.75rem;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+}
+
+.note {
+  margin-left: 0.4rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: normal;
+  color: var(--text-muted);
+}
+
+.description {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--text-soft);
+}
+
+.section {
+  margin-top: 2.5rem;
+}
+
+.planet {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 1.25rem;
+  overflow: hidden;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.planet img {
+  width: 100%;
+  height: 100%;
+  min-height: 160px;
+  object-fit: cover;
+}
+
+.planetBody {
+  padding: 1rem 1.25rem 1rem 0;
+}
+
+.planetName {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+  font-size: 1.25rem;
+}
+
+.destroyed {
+  padding: 0.15rem 0.5rem;
+  border: 1px solid rgba(255, 77, 109, 0.4);
+  border-radius: 999px;
+  background: rgba(255, 77, 109, 0.15);
+  color: var(--danger);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.planetText {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-soft);
+}
+
+.transformations {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.transformation {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.transformation img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  padding: 0.5rem 0.5rem 0;
+  object-fit: contain;
+  object-position: bottom;
+  background: radial-gradient(circle at 50% 45%, rgba(255, 210, 63, 0.35), transparent 65%);
+}
+
+.transformationName {
+  padding: 0.6rem 0.75rem 0;
+  font-weight: 700;
+}
+
+.transformationKi {
+  padding: 0 0.75rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+@media (max-width: 800px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .portrait {
+    position: static;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .planet {
+    grid-template-columns: 1fr;
+  }
+
+  .planet img {
+    max-height: 200px;
+  }
+
+  .planetBody {
+    padding: 0 1.25rem 1.25rem;
+  }
+}
